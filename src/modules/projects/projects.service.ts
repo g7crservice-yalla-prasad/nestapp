@@ -16,6 +16,7 @@ export class ProjectsService {
     constructor(){}
 
     getProjects(){
+        console.log('Loaded TEST_VAR:', process.env.TEST_VAR);
         return({projects, var: process.env.TEST_VAR || null})
     }
 }
