@@ -16,6 +16,6 @@ export class ProjectsService {
     constructor(){}
 
     getProjects(){
-        return({projects, var: process.env.TEST_VAR && null})
+        return({projects, var: process.env.TEST_VAR || null})
     }
 }
