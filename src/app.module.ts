@@ -8,7 +8,7 @@ import { ConfigModule } from '@nestjs/config';
 @Module({
   imports: [AuthModule, ProjectsModule,   ConfigModule.forRoot({
       isGlobal: true, // Make config available app-wide
-      envFilePath: `.env.${process.env.NODE_ENV || 'dev'}`, // defaults to .env.dev
+      envFilePath: `.env.${process.env.NODE_ENV || 'prod'}`, // defaults to .env.dev
     }),],
   controllers: [AppController],
   providers: [AppService],
