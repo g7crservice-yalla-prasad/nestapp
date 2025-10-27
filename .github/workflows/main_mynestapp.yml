@@ -44,6 +44,9 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: node-app
+
+      - name: Wait before deploy
+        run: sleep 30
       
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
@@ -52,4 +55,5 @@ jobs:
           app-name: 'mynestapp'
           slot-name: 'Production'
           package: .
+
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_5E56266C91AC4242B3E3C99A16E4C314 }}
